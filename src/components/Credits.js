@@ -16,7 +16,7 @@ const Credits = ({ credits, addCredit }) => {
       <br />
       <div className={styles.creditList}>
         {credits.map((credit) => (
-          <div id={credit.id} className={styles.creditItem}>
+          <div key={credit.id} id={credit.id} className={styles.creditItem}>
             <p className={styles.creditAmount}>
               ${roundToHundredths(credit.amount)}
             </p>
