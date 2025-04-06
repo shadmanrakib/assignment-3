@@ -1,0 +1,18 @@
+.creditList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.creditItem {
+  /* border: 1px solid #888; */
+  border-radius: 2px;
+  background: #f6f6f6;
+}
+
+.creditAmount {
+  font-size: 1.5rem;
+  line-height: 1rem;
+  color: green;
+  font-weight: 700;
+}
