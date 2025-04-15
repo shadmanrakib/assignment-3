@@ -90,10 +90,16 @@ class App extends Component {
     const LogInComponent = () => (
       <LogIn user={this.state.currentUser} mockLogIn={this.mockLogIn} />
     );
+    //story Account Balance for Credits:
     const CreditsComponent = () => (
-      <Credits credits={this.state.creditList} addCredit={this.addCredit} />
+      <Credits
+        credits={this.state.creditList}
+        addCredit={this.addCredit}
+        accountBalance={this.state.accountBalance}
+      />
     );
-    //story Account Balance for Debits
+    
+    //story Account Balance for Debits:
     const DebitsComponent = () => (
       <Debits
         debits={this.state.debitList}

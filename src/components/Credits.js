@@ -9,11 +9,14 @@ import AddCreditForm from "./AddCreditForm";
 import { formatDateStr, roundToHundredths } from "../utils";
 import styles from "./Credits.module.css";
 
-const Credits = ({ credits, addCredit }) => {
+const Credits = ({ credits, addCredit, accountBalance }) => {
   return (
     <div>
       <h1>Credits</h1>
-      <br />
+      <div>
+        <h3>Account Balance: ${roundToHundredths(accountBalance)}</h3>  
+      </div>
+
       <div className={styles.creditList}>
         {credits.map((credit) => (
           <div key={credit.id} id={credit.id} className={styles.creditItem}>
