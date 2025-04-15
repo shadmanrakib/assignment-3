@@ -93,7 +93,14 @@ class App extends Component {
     const CreditsComponent = () => (
       <Credits credits={this.state.creditList} addCredit={this.addCredit} />
     );
-    const DebitsComponent = () => <Debits debits={this.state.debitList} />;
+    //story Account Balance for Debits
+    const DebitsComponent = () => (
+      <Debits
+        debits={this.state.debitList}
+        accountBalance={this.state.accountBalance}
+      />
+    );
+    
 
     // Important: Include the "basename" in Router, which is needed for deploying the React app to GitHub Pages
     return (
