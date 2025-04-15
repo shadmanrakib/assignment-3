@@ -75,6 +75,21 @@ class App extends Component {
     this.setState({ creditList: newCreditList, accountBalance: newBalance });
   };
 
+  //addDebit story
+  addDebit = ({ amount, description }) => {
+    const id = crypto.randomUUID();
+    const dateStr = new Date().toISOString().slice(0, 10); 
+    const newDebit = {
+      id,
+      date: dateStr,
+      amount: parseFloat(amount), 
+      description,
+    };
+    const newDebitList = [...this.state.debitList, newDebit];
+    const newBalance = this.state.accountBalance - amount;  // subtract debit from balance
+    this.setState({ debitList: newDebitList, accountBalance: newBalance });
+  };
+
   // Create Routes and React elements to be rendered using React components
   render() {
     // Create React elements and pass input props to components
@@ -103,6 +118,7 @@ class App extends Component {
     const DebitsComponent = () => (
       <Debits
         debits={this.state.debitList}
+        addDebit={this.addDebit}
         accountBalance={this.state.accountBalance}
       />
     );
