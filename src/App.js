@@ -75,6 +75,7 @@ class App extends Component {
     this.setState({ creditList: newCreditList, accountBalance: newBalance });
   };
 
+
   //addDebit story
   addDebit = ({ amount, description }) => {
     const id = crypto.randomUUID();
@@ -89,6 +90,7 @@ class App extends Component {
     const newBalance = this.state.accountBalance - amount;  // subtract debit from balance
     this.setState({ debitList: newDebitList, accountBalance: newBalance });
   };
+
 
   // Create Routes and React elements to be rendered using React components
   render() {

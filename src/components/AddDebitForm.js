@@ -1,6 +1,7 @@
 import React, { useMemo, useState } from "react";
 
 const AddDebitForm = (props) => {
+
   const [description, setDescription] = useState("");
   const [amount, setAmount] = useState(0);
 
